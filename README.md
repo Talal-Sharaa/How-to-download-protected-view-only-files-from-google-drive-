@@ -1,3 +1,4 @@
+
 # How-to-download-protected-view-only-files-from-google-drive??
 
 1. Open or Preview Any view-only or protected files from google drive.
@@ -14,6 +15,17 @@
 3.  Navigate to the "Console" tab.
 
 4.  Paste below code and press Enter:
+
+
+        if (window.trustedTypes && window.trustedTypes.createPolicy) {
+        window.trustedTypes.createPolicy('default', {
+        createHTML: string => string,
+        createScriptURL: string => string,
+        createScript: string => string,
+        });
+        }
+
+5. Paste below code and press Enter:
 
         let jspdf = document.createElement( "script" );
         jspdf.onload = function () {
@@ -38,4 +50,4 @@
         jspdf.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js' ;
         document.body.appendChild(jspdf);
 
-5. Now, the pdf file start to download. This might take a few minutes depending on the file size.
+6. Now, the pdf file start to download. This might take a few minutes depending on the file size.
